@@ -1,0 +1,78 @@
+<HTML>
+<HEAD><TITLE>Percabangan IF-ELSE 2</TITLE></HEAD>
+<BODY>
+<SCRIPT language="JavaScript">
+<!--
+function hitungtotal()
+{
+ var nama = (document.fform.inama.value);
+ var tujuan = (document.fform.itujuan.value);
+ var jumlahtiket = parseFloat(document.fform.ijumlah.value);
+ var ht = 0.0;
+ var sub = 0.0;
+ var diskon =0.0;
+ var total =0.0;
+
+ if (tujuan=="Jakarta")
+ {
+   ht =100000;  
+ }
+ else if (tujuan=="Solo")
+ {
+   ht =150000;
+ }
+ else
+ {
+	 ht =200000;
+ }
+ sub = jumlahtiket*ht;
+
+ if (document.fform.imember.checked==true)
+ {
+	diskon =0.10*sub;
+ }
+ else
+ {
+ 	diskon=0.0;
+ }
+
+ total = sub-diskon;
+ document.fform.otiket.value=eval(ht);
+ document.fform.osub.value=eval(sub);
+ document.fform.odiskon.value=eval(diskon);
+ document.fform.ototal.value=eval(total);
+ // gunakan untuk mengecek !!! alert (total);
+}
+//--></SCRIPT>
+<FORM NAME ="fform">
+<table border="1" align="center"width="70%">
+	<tr>
+		<td width="100%" colspan="2"><H2 ALIGN="center">Travel Bintang Abadi</H2></td> 
+	</tr>
+	<tr>
+		<td width="50%"><PRE>
+	Nama 		:	<input type="text" size="20" name="inama">
+	Tujuan 		:	<select name="itujuan" size=1>
+					<option value="Jakarta">Jakarta</option>						
+					<option value="Solo">Solo</option>
+					<option value="Surabaya">Surabaya</option>
+						</select>
+	Jumlah Tiket	:	<input type="text" size="11" name="ijumlah">
+	Member 		:	<input type="checkbox" name="imember">Ya</td></pre>
+	<td width="50%"><pre>
+		Harga Tiket	:	<input type="text" size="10" name="otiket">
+		Sub Total	:	<input type="text" size="10" name="osub">
+		Diskon		:	<input type="text" size="10" name="odiskon">
+		Total Bayar	:	<input type="text" size="10" name="ototal"></td></pre>
+	</tr>
+	<tr>
+		<td width="100%" colspan="2">
+		<center>
+	<INPUT TYPE="button" value="Hitung" onclick="hitungtotal()">
+	<INPUT TYPE="reset" value="Ulang">
+		</center></td>
+	</tr>
+</table>
+</FORM>
+</BODY>
+</HTML>

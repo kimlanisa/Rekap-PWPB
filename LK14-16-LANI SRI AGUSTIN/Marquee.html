@@ -1,0 +1,25 @@
+<html>
+<Head>
+<Title>membuat
+Marquee Pada Status bar</Title>
+</Head>
+<body bgcolor="pink"><center>
+ <p><font color="blue" size="5">Latihan Marquee Dengan JavaScript</p>
+ <body onload="p()">
+ <script language="JavaScript">
+ var pesan ="Hallo Friend...Apa Kabar? ";
+ var pesan2 ="Welcome To My Website ";
+ function p()
+ {
+ 	document.basis.kotak.value=pesan;
+ 	pesan=pesan.substr(1,pesan.length)+pesan.substr(0,1);
+ 	pesan2=pesan2.substr(1,pesan2.length)+pesan2.substr(0,1);
+ 	window.status=pesan2;
+ 	setTimeout("p()",100);
+ }
+</script>
+ <form method="post" name="basis">
+ <input type="text" name="kotak" size=20>
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<Head>
+<Title>Latihan Frame-Menu</Title>
+</Head>
+<body bgcolor="lightblue">
+<script language="JavaScript">
+function menu()
+{
+
+	str="latmath.HTML";
+if (document.fform.rbmenu[1].checked)
+	str="latobjekteks.HTML";
+else if (document.fform.rbmenu[2].checked)
+	str="latobjekselect.HTML";
+else if (document.fform.rbmenu[3].checked)
+	str="latobjekcheck.HTML";
+ parent.fr2.location.href=str;
+}
+</script>
+<p>Pilih Latihan Dibawah Ini</p>
+<form name="fform">
+<p><input type="radio" checked name="rbmenu" value="1">Matematika</p>
+<p><input type="radio" name="rbmenu" value="2">Objek Teks</p>
+<p><input type="radio" name="rbmenu" value="3">Objek Select</p>
+<p><input type="radio" name="rbmenu" value="4">Objek Check</p>
+<p><input type="button" onclick="menu()" value="TAMPILKAN">
+</form>
+</body>
+</html>

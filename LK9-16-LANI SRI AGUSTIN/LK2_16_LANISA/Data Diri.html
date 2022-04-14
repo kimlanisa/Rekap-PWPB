@@ -1,0 +1,76 @@
+<html> 
+<head> 
+ <title> Data Peserta Didik </title> 
+</head> 
+
+<body bgcolor = "pink"> 
+<script language="Javascript"> 
+
+function tekan(form) 
+{ 
+
+var nisstr=(document.f202110556.nis.value); 
+var namastr=(document.f202110556.nama.value); 
+var jenisstr=(document.f202110556.jenis.value); 
+var agamastr=(document.f202110556.agama.value); 
+var status=""; 
+ if(form.status.checked==true) 
+  {status="Pacaran";} 
+     else 
+  {status="Jomblo";} 
+var jurusanstr=(document.f202110556.jurusan.value); 
+var komstr=(document.f202110556.kom.value); 
+document.f202110556.onis.value=nisstr; 
+document.f202110556.onama.value=namastr; 
+document.f202110556.ojenis.value=jenisstr; 
+document.f202110556.oagama.value=agamastr; 
+document.f202110556.ostatus.value=status; 
+document.f202110556.ojurusan.value=jurusanstr; 
+document.f202110556.okom.value=komstr; 
+
+} 
+</script> 
+
+<center> 
+<h2><b> Data Peserta Didik </h2></b> 
+<h2><b> Kelas XI RPL </h2></b> 
+<pre><u>                      </center></u></pre><br> 
+
+<form name="f202110556"><pre> 
+NIS            : <input type="text" size="12" name="nis"> 
+Nama Siswa     : <input type="text" size="15" name="nama"> 
+Jenis Kelamin  : <select name="jenis" size="1"> 
+                 <option value="Wanita"> Wanita </option> 
+                 <option value="Pria"> Pria </option></select> 
+Agama          : <select name="agama" size="1"> 
+                 <option value="Islam"> Islam </option> 
+                 <option value="Kristen"> Kristen </option> 
+                 <option value="Hindu"> Hindu </option> 
+                 <option value="Budha"> Budha </option> 
+                 <option value="Katolik"> Katolik </option></select> 
+Status         : <input type="radio" value="Pacaran" name="status"> Pacaran <input type="radio" value="Jomblo" name="status"> Jomblo
+Jurusan        : <select name="jurusan" size="1"> 
+                 <option value="Rekayasa Perangkat Lunak"> Rekayasa Perangkat Lunak </option> 
+                 <option value="Multimedia"> Multimedia </option> 
+                 <option value="OTKP"> OTKP </option> 
+                 <option value="Bisnis Daring Dan Pemasaran"> Bisnis Daring Dan Pemasaran </option> 
+                 <option value="Tata Boga"> Tata Boga </option> 
+                 <option value="Perhotelan"> Perhotelan </option>
+                 <option value="Akuntansi Dan Keuangan Lembaga"></option></select>
+Komentar       : <textarea name="kom" rows="4" cols="40" ></textarea></pre><br> 
+
+<center> 
+<input type="button" value="Kirim" onclick="tekan(this.form)"> 
+<input type="reset" value="Ulang"></center><br> 
+<h2><u><b><center> Data Peserta Didik XI RPL </center></h2></u></b><pre> 
+NIS             : <input type="text" size="11" name="onis"> 
+Nama Siswa      : <input type="text" size="20" name="onama"> 
+Jenis Kelamin   : <input type="text" size="11" name="ojenis"> 
+Agama           : <input type="text" size="11" name="oagama"> 
+Status          : <input type="text" size="11" name="ostatus"> 
+Jurusan         : <input type="text" size="20" name="ojurusan"> 
+Komentar        : <textarea name="okom" rows="4" cols="30"></textarea></pre><br> 
+
+</form> 
+</body> 
+</html>

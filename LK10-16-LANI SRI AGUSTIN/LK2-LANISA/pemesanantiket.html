@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>TRAVEL</title>
+</head>
+<body>
+<script language="javascript">
+function tekan()
+{
+   var jumlahtiket = parseFloat(document.fform.ijumlahtiket.value);
+   var nama = (document.fform.inama.value);
+   var tujuan = (document.fform.itujuan.value);
+   var kelas = (document.fform.ikelas.value);
+   var ht = 0.0;
+   var sub = 0.0;
+   var diskon = 0.0;
+   var total = 0.0;
+
+   if ((tujuan == "Jakarta")&&(kelas == "Eksekutif"))
+   {
+     ht = 70000;
+   }
+   else if ((tujuan == "Jakarta")&&(kelas == "Bisnis"))
+   {
+     ht = 40000;
+   }
+   else if ((tujuan == "Jakarta")&&(kelas == "Ekonomi"))
+   {
+     ht = 10000;
+   }
+   else if ((tujuan == "Solo")&&(kelas == "Eksekutif"))
+   {
+     ht = 80000;
+   }
+   else if ((tujuan == "Solo")&&(kelas == "Bisnis"))
+   {
+     ht = 50000;
+   }
+   else if ((tujuan == "Solo")&&(kelas == "Ekonomi"))
+   {
+     ht = 20000;
+   }
+   else if ((tujuan == "Surabaya")&&(kelas == "Eksekutif"))
+   {
+     ht = 90000;
+   }
+   else if ((tujuan == "Surabaya")&&(kelas == "Bisnis"))
+   {
+     ht = 60000;
+   }
+   else
+   {
+     ht = 30000;
+   }
+
+   sub = jumlahtiket*ht;
+  
+   if (document.fform.imember.checked == true)
+   {
+     diskon = 0.10*ht;
+   }
+   else
+   {
+     diskon = 0.0*ht;
+   }
+  
+   total = sub - diskon;
+  
+   document.fform.otiket.value = eval(ht);
+   document.fform.osub.value = eval(sub);
+   document.fform.odiskon.value = eval(diskon);
+   document.fform.ototal.value = eval(total);
+  
+   alert(total);
+}
+</script>
+
+<form name = "fform">
+<table border="1" align="center" width="70%">
+  <tr>
+    <td width="100%" colspan="2"><h2 align="center">TRAVEL BINTANG ABADI</h2>
+</td></tr>
+<tr><td width="50%">
+<pre>
+        Nama          : <input type="text" size="20" name="inama">
+        Tujuan        : <select name="itujuan" size="1">
+                        <option value="Jakarta">Jakarta</option>
+                        <option value="Solo">Solo</option>
+                        <option value="Surabaya">Surabaya</option>
+                        </select>
+        Tujuan        : <select name="ikelas" size="1">
+                        <option value="Eksekutif">Eksekutif</option>
+                        <option value="Bisnis">Bisnis</option>
+                        <option value="Ekonomi">Ekonomi</option>
+                        </select>
+        Jumlah Tiket  : <input type="text" size="20" name="ijumlahtiket">
+        Member        : <input type="radio" value="Member" name="imember">Ya
+</td></pre>
+<td width="50%">
+<pre>
+        Harga Tiket   :   Rp <input type="text" size="20" name="otiket">
+        Sub Total     :   Rp <input type="text" size="20" name="osub">
+        Diskon        :   Rp <input type="text" size="20" name="odiskon">
+        Total Bayar   :   Rp <input type="text" size="20" name="ototal">
+</td></tr></pre>
+<tr><td width="100%" colspan="2">
+<center>
+<input type="button" value="Hitung" onclick="tekan()">
+<input type="reset" value="Ulang">
+</center>
+</td></tr>
+</table>
+</form>
+</body>
+</html>
